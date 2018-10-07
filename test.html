@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>타이틀</title>
+    <style>
+      #parentDiv {
+        background-color: black;
+        position: relative;
+      }
+      #parentDiv div {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+      }
+      #parentDiv #first {
+        position: absolute;
+        top: 100px;
+        left: 30px;
+        background-color: #2e9868;
+      }
+      #parentDiv #second {
+        background-color: #1e9868;
+      }
+      #parentDiv #third {
+        background-color: #5d36ca;
+      }
+      #parentDiv #fourth {
+        background-color: #ca3693;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      css를 html에 포함시키는 방법
+      1. style 태그
+      2. 별도의 css 파일 작성 후 link 태그로 불러오기
+        <link rel="stylesheet" href="css 문서 주소">
+      3. inline style로 태그에 직접 입력
+        <span style="font-size: 300px;">하이</span>
+    -->
+    <h1>H1</h1>
+    <h2>H2</h2>
+    <div>div 태그</div>
+    <span>태그 없는 텍스트</span>
+    <span>스팬 태그</span>
+    <p>로렘 입숨(lorem ipsum; 줄여서 립숨, lipsum)은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은 그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트로, 최종 결과물에 들어가는 실제적인 문장 내용이 채워지기 전에 시각 디자인 프로젝트 모형의 채움 글로도 이용된다. 이런 용도로 사용할 때 로렘 입숨을 그리킹(greeking)이라고도 부르며, 때로 로렘 입숨은 공간만 차지하는 무언가를 지칭하는 용어로도 사용된다.</p>
+    <p>로렘 입숨(lorem ipsum; 줄여서 립숨, lipsum)은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은 그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트로, 최종 결과물에 들어가는 실제적인 문장 내용이 채워지기 전에 시각 디자인 프로젝트 모형의 채움 글로도 이용된다. 이런 용도로 사용할 때 로렘 입숨을 그리킹(greeking)이라고도 부르며, 때로 로렘 입숨은 공간만 차지하는 무언가를 지칭하는 용어로도 사용된다.</p>
+    <p>로렘 입숨(lorem ipsum; 줄여서 립숨, lipsum)은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은 그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트로, 최종 결과물에 들어가는 실제적인 문장 내용이 채워지기 전에 시각 디자인 프로젝트 모형의 채움 글로도 이용된다. 이런 용도로 사용할 때 로렘 입숨을 그리킹(greeking)이라고도 부르며, 때로 로렘 입숨은 공간만 차지하는 무언가를 지칭하는 용어로도 사용된다.</p>
+
+    <!-- override -->
+    <!-- 상속(inherit) -->
+    <!-- 부모 태그 div의 style font-size: 50px; 을 자식 태그들이 상속받음 -->
+    <!-- 그래서 자식 태그들의 font-size는 기본적으로 50px -->
+    <!-- 자식 태그 중에 속성 바꾸고 싶을 경우, 자식 태그에 직접 스타일 설정해서 override 가능 -->
+    <div style="font-size: 50px;">
+      <span style="font-size: 15px;">스팬1</span>
+      <span>스팬2</span>
+    </div>
+
+    <div id="parentDiv" class="divGroup">
+      <div id="first">div1</div>
+      <div id="second">div2</div>
+      <div id="third">div3</div>
+      <div id="fourth">div4</div>
+    </div>
+
+    <div class="divGroup">
+      <div>aaa</div>
+    </div>
+
+    <script>
+      $('.divGroup').click(function(e) {
+        alert('클릭됨');
+      });
+    </script>
+
+  </body>
+</html>
