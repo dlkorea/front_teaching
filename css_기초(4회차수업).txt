@@ -1,0 +1,74 @@
+css는 디자인 명세.
+
+* css 구조
+
+선택자 {
+    속성1: 값1;
+    속성2: 값2;
+    ...
+}
+
+선택자1, 선택자2, 선택자3, ... {
+    속성1: 값1;
+    속성2: 값2;
+    ...
+}
+
+선택자 <- id나 class나 태그명이나 포함관계나 등등등을 통해 특정 태그 또는 태그들을 선택하도록 하는 명령
+
+.firstChild <- html tag 중에서 firstChild class를 갖는 태그들
+#firstChild <- firstChild id를 갖는 태그
+.parent .children <- parent class를 갖는 태그의 자식 태그 중 children class를 갖는 태그
+.paren > .children <- parent class를 갖는 태그의 첫번째 자식 중에서 children class를 갖는 태그
+
+
+* css 속성
+1) 텍스트 관련
+font-family <- 폰트 바꾸는 거
+font-size <- 텍스트 크기
+color <- 텍스트 칼라
+text-decoration: underline; 처럼 밑줄 등등
+font-weight: 700; 볼드
+/* white-space: nowrap; 텍스트 줄바꿈 x */
+등등등
+
+2) 기타
+background
+background-color
+width
+height
+
+3) 여백
+padding
+margin
+
+4) 경계
+border
+
+5) 그림자
+box-shadow
+
+6) 포지션
+position: absolute;
+position: relative;
+같이 쓰이는게 top, bottom, left, right
+
+
+<div style="position: relative;">
+    <div style="position: absolute; top: 50px; left: 100px;">내용</div>
+</div>
+
+7) display <- 이게 사실 css의 핵심 중 하나(개념상으론)
+display: none; (visibility: hidden; 과 차이점 <- visibility hidden은 컴포넌트가 자리를 차지하되 안보이게 함. display: none은 자리 차지 x)
+display: block; (<div> 태그의 default가 block. block은 1줄을 다 차지해요. 내부 내용의 크기가 작아도 무조건 한줄)
+display: inline; (<span> 태그의 default가 inline. inline은 내부 내용의 크기만큼만 자리를 차지. 단점: 크기 지정이 안되어요.)
+display: inline-block; (크기 지정이 되는 inline 이라고 생각하시면 되어요.)
+
+(display: flex; 등등등)
+
+
+* padding, border, margin 의 상관관계(?). 컴포넌트 크기 계산.
+<div style="padding: 10px; margin: 15px; border: 1px solid black;">하하</div>
+쉽게 표현하면, border가 경계. padding은 border 내부의 여백. margin은 border 외부의 여백.
+border 크기까지가 컴포넌트 크기.
+

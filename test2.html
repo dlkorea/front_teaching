@@ -1,6 +1,8 @@
 <html>
   <head>
     <title>제목</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
@@ -14,8 +16,12 @@
       <div class="second_children">second_children class 갖는 첫번째 자식</div>
     </div>
 
+    <hr>
+    <br><br><br>
     <a id="google" href="http://google.com/">구글사이트로 이동</a>
 
+    <hr><br><br><br>
+    <span style="font-size: 20px; background-color: blue; color: white; width: 300px; height: 50px; padding: 10px; margin: 10px; display: inline-block;">스팬태그</span>
     <style>
       .parent > .second_children {
         color: white;
@@ -66,6 +72,10 @@
           while (wanna_quit === false) {
             wanna_quit = confirm('그만할까요?');
           }
+        }
+        else {
+          // alert('안됨');
+          self.fadeOut();
         }
       });
 
