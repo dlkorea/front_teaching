@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<link rel="stylesheet" href="css/main.css" />
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+	<script src="js/script.js"></script>
+
+
+</head>
+<body>
+
+<script>
+	var start_rotate3d = [
+		'rotate3d(1, 1, 1, 0deg)',
+		'rotate3d(1, 1, 1, 0deg)',
+		'rotate3d(1, 1, 1, 0deg)',
+		'rotate3d(1, 1, 1, 0deg)',
+		'rotate3d(1, 1, 1, 0deg)',
+		'rotate3d(1, 1, 1, 0deg)',
+		'rotate3d(1, 1, 1, 0deg)',
+		'rotate3d(1, 1, 1, 0deg)',
+		'rotate3d(1, 1, 1, 0deg)',
+		'rotate3d(1, 1, 1, 0deg)',
+	]
+
+	var end_rotate3d = [
+		'rotate3d(0, 0, 0, 360deg)',
+		'rotate3d(0, 1, 0.5, 360deg)',
+		'rotate3d(0, 1, 3, 360deg)',
+		'rotate3d(1, 0, 0, 360deg)',
+		'rotate3d(0, 1, 0.5, 360deg)',
+		'rotate3d(4, 1, 3, 360deg)',
+		'rotate3d(1.4, 3, 0.5, 360deg)',
+		'rotate3d(2, 0.34, 0.5, 360deg)',
+		'rotate3d(0, 1, 1, 360deg)',
+		'rotate3d(3.3, 1, 0.8, 360deg)',
+	]
+
+	function createLine(row, clmn) {
+		var line = $('<div class="line' + row + '"></div>')
+			.appendTo('body');
+
+		return line;
+	}
+
+	function createBox(line, row, clmn) {
+		function renderData(point, content) {
+			return 'data-' + point + 'p="' + content + '"'
+		}
+		function renderStyle(content) {
+			return 'style="' + content + '"';
+		}
+
+		var boxTemplate = '<div ' +
+			+ 'class="box box' + clmn + '"'
+			+ renderData(row*10, 'right:' + clmn*10 + '%;' + 'transform:' + start_rotate3d[row-1])
+			+ renderData(300, 'right:' + clmn*20 + '%;' + 'transform:' + end_rotate3d[row-1])
+			+ renderStyle("background-color: black; top:" + row*10 + "%;")
+			+ '></div>'
+
+		var box = $(boxTemplate)
+			.appendTo(line);
+
+		return box;
+	}
+
+	for (var row=1; row <= 22; row++) {
+		var line = createLine(row).appendTo('body');
+
+		// var line = $('<div class="line' + row + '"></div>')
+		// 	.appendTo('body');
+
+
+		for (var clmn=1; clmn <= 10; clmn++) {
+			var box = createBox(line, row, clmn).appendTo(line);
+
+			// var boxTemplate = '<div ' +
+			// 	+ 'class="box box' + clmn + '"'
+			// 	+ 'data-' + (row*10) + 'p="' + 'right:' + clmn*10 + '%;' + 'transform: ' + '"'
+			// 	+ 'data-300p="' + 'transform: rotate3d(1, 1, 1, 50deg);' + '"'
+			// 	+ 'style="background-color: black; top:' + row*10 +'%;"'
+			// 	+ '></div>'
+
+		}
+	}
+</script>
+
+
+<script src="js/skrollr.min.js"></script>
+
+<script type="text/javascript"> var s = skrollr.init({});</script>
+
+
+
+</body>
+</html>
