@@ -2,11 +2,9 @@
 <html>
 <head>
 
-	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="main.css" />
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
-	<script src="js/script.js"></script>
-
 
 </head>
 <body>
@@ -80,7 +78,7 @@
 
 	// row 0부터 시작하도록 변경함. index는 0으로 시작하도록 습관 들이시는게 나중을 위해 좋아요.
 	for (var clmn=0; clmn < 22; clmn++) {
-		var line = createLine(clmn).appendTo('body');
+		var line = createLine(clmn);
 
 		// clmn도 0부터 시작하도록 변경함.
 		var topD = 100 / 22;
@@ -92,32 +90,32 @@
 			var id = 'box_' + clmn + '_' + row;
 
 			if (clmn < 11) {
-				// var startPoint = startPointList[인덱스];
-				// var endPoint = 300;
-				// var start = {
-				// 	right: 값,
-				// 	top: 값,
-				// 	rotate3d: start_rotate3d[row]
-				// }
-				// var end = {
-				// 	right: 값,
-				// 	top: 값,
-				// 	rotate3d: end_rotate3d[row]
-				// }
+				var startPoint = startPointList[clmn];
+				var endPoint = 300;
+				var start = {
+					right: 100 - rightD * (row + 1),
+					top: parseInt(topD * clmn * 100) / 100,
+					rotate3d: start_rotate3d[row]
+				}
+				var end = {
+					right: row * rightD,
+					top: parseInt((100 - topD * (clmn + 1)) * 100) / 100,
+					rotate3d: end_rotate3d[row]
+				}
 			}
 			else {
-				// var startPoint = startPointList[인덱스];
-				// var endPoint = 300;
-				// var start = {
-				// 	right: 값,
-				// 	top: 값,
-				// 	rotate3d: start_rotate3d[row]
-				// }
-				// var end = {
-				// 	right: 값,
-				// 	top: 값,
-				// 	rotate3d: end_rotate3d[row]
-				// }
+				var startPoint = startPointList[21-clmn];
+				var endPoint = 300;
+				var start = {
+					right: 100 - rightD * (row + 1),
+					top: parseInt(topD * clmn * 100) / 100,
+					rotate3d: start_rotate3d[row]
+				}
+				var end = {
+					right: row * rightD,
+					top: parseInt((100 - topD * (clmn + 1)) * 100) / 100,
+					rotate3d: end_rotate3d[row]
+				}
 			}
 
 			var box = createBox(line, id, startPoint, start, endPoint, end);
@@ -126,7 +124,7 @@
 </script>
 
 
-<script src="js/skrollr.min.js"></script>
+<script src="skrollr.min.js"></script>
 
 <script type="text/javascript"> var s = skrollr.init({});</script>
 
