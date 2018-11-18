@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>제목</title>
+  <style>
+    .container {
+      text-align: center;
+      width: 800px;
+      margin: auto;
+    }
+    #img1_wrapper {
+      width: 350px;
+      height: 187px;
+      overflow: hidden;
+      margin: auto;
+    }
+    img#img1 {
+      min-width: 350px;
+      max-width: 350px;
+      transform: scale(1);
+      /*filter: grayscale(100%);*/
+      transition: all 0.45s ease;
+    }
+    img#img1:hover {
+      transform: scale(1.1);
+      /*filter: grayscale(0%);*/
+      /*filter: saturate(70%);*/
+      filter: sepia(60%);
+      transition: all 0.45s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>이미지</h2>
+    <div id="img1_wrapper">
+      <img id="img1" src="https://s.pstatic.net/static/www/mobile/edit/2018/1116/cropImg_346x185_142809708701409806.jpeg">
+    </div>
+    <img src="test.svg">
+  </div>
+</body>
+</html>
